@@ -5,7 +5,10 @@
  * @param {string} fahren temperature in degrees F
  * @returns {number} the number of degrees C
  */
-function convertToCelsius(fahren) {}
+function convertToCelsius(fahren) {
+  let celc = (fahren - 32) * 5/9;
+  return celc;
+}
 
 /**
  * Takes both numbers (F, C) and display a message with
@@ -22,7 +25,17 @@ function convertToCelsius(fahren) {}
  * @param {number} fahren
  * @param {number} celc
  */
-function createMessage(fahren, celc) {}
+function createMessage(fahren, celc) {
+  if (celc <= 32) {
+    console.log(fahren + " degrees Fahrenheit is " + celc + "degrees Celcius and very cold");
+  } if (celc >= 32 && celc <= 64) {
+    console.log(fahren + " degrees Fahrenheit is " + celc + "degrees Celcius and cold");
+  } if ( celc >= 64 && celc <= 86) {
+    console.log(fahren + " degrees Fahrenheit is " + celc + "degrees Celcius  warm");
+  } else {
+    console.log(fahren + " degrees Fahrenheit is " + celc + "degrees Celcius and hot");
+  }
+}
 
 /**
  * Takes a number and returns a random integer from 0 to the limit
